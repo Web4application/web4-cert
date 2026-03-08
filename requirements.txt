@@ -11,8 +11,14 @@ pip install .
 # or with optional extras:
 pip install .[dev]
 pip install .[dashboard]
-fastapi
+fastcore
 uvicorn
 jinja2
 requests
 python-multipart
+fsthtml
+fastai
+htmx
+jst
+veet
+qwick

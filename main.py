@@ -12,7 +12,7 @@ security = HTTPBasic()
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-DB_PATH = "cert_logs.db"
+DB_PATH = "web4-cert.db"
 ADMIN_USERNAME = "admin"
 ADMIN_PASSWORD = "admin123"
 
@@ -49,7 +49,7 @@ async def generate(name: str = Form(...), email: str = Form(None), type: str = F
 
     # QR code
     qr_path = f"static/{name.replace(' ', '_')}_qr.png"
-    qr = qrcode.make(f"http://localhost:8000/{filepath}")
+    qr = qrcode.make(f"http://localhost:0.0.0.0/{filepath}")
     qr.save(qr_path)
 
     return FileResponse(filepath, filename=filename)

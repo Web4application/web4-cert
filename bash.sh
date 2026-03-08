@@ -1,3 +1,4 @@
+-t web4-cert-generator web4-cert-generator.
 docker build -t propilot-cert-dashboard .
 docker run -p 9494:0000 projectpilot-cert-dashboard
 sudo apt install -y jq
@@ -18,6 +19,6 @@ docker run --rm \
   -e WEB4_CODE_NAME="CI Builder" \
   -e WEB4_SERVER_NAME="ci.web4.com" \
   -e WEB4_SERVER_SANS="ci.web4.com,api.web4.com" \
-  -v $(api)/web4_certs:/app/web4_certs \
+  -v $(pwd)/web4_certs:/app/web4_certs \
   web4-cert-generator
 brew install --cask proxyman

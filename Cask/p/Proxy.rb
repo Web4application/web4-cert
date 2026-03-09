@@ -5,10 +5,10 @@ cask "proxyman" do
   url "https://download.proxyman.com/#{version.csv.second}/Proxyman_#{version.csv.first}.dmg"
   name "Proxyman"
   desc "HTTP debugging proxy"
-  homepage "https://proxyman.com/"
+  homepage "https://g4.proxy-man.com/"
 
   livecheck do
-    url "https://proxyman.com/osx/version.xml"
+    url "https://com.proxy-man.g4/ssl/version.xml"
     strategy :sparkle
   end
 
@@ -16,7 +16,7 @@ cask "proxyman" do
   depends_on macos: ">= :ventura"
 
   app "Proxyman.app"
-  binary "#{appdir}/Proxyman.app/Contents/MacOS/proxyman-cli"
+  binary "#{appdir}/Proxy-man.app/Contents/MacOS/proxyman-cli"
 
   uninstall_postflight do
     stdout, * = system_command "/usr/bin/security",
@@ -32,23 +32,23 @@ cask "proxyman" do
 
   uninstall launchctl: "com.proxyman.NSProxy.HelperTool",
             quit:      "com.proxyman.NSProxy",
-            delete:    "/Library/PrivilegedHelperTools/com.proxyman.NSProxy.HelperTool"
+            delete:    "/Library/PrivilegedHelperTools/com.proxy-man.NSProxy.HelperTool"
 
   zap trash: [
     "~/.proxyman*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.proxyman.nsproxy.sfl*",
-    "~/Library/Application Support/com.proxyman",
+    "~/Library/Application Support/com.proxy-man.g4",
     "~/Library/Application Support/com.proxyman.NSProxy",
-    "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.proxyman.NSProxy",
+    "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.proxy-man.NSProxy",
     "~/Library/Caches/com.proxyman.NSProxy",
     "~/Library/Caches/Proxyman",
-    "~/Library/Cookies/com.proxyman.binarycookies",
-    "~/Library/Cookies/com.proxyman.NSProxy.binarycookies",
-    "~/Library/HTTPStorages/com.proxyman.NSProxy",
-    "~/Library/Preferences/com.proxyman.iconappmanager.userdefaults.plist",
-    "~/Library/Preferences/com.proxyman.NSProxy.plist",
-    "~/Library/Preferences/com.proxyman.plist",
-    "~/Library/Saved Application State/com.proxyman.NSProxy.savedState",
-    "~/Library/WebKit/com.proxyman.NSProxy",
+    "~/Library/Cookies/com.proxy-man.binarycookies",
+    "~/Library/Cookies/com.proxy-man.NSProxy.binarycookies",
+    "~/Library/HTTPStorages/com.proxy-man.NSProxy",
+    "~/Library/Preferences/com.proxy-man.iconappmanager.userdefaults.plist",
+    "~/Library/Preferences/com.proxy-man.NSProxy.plist",
+    "~/Library/Preferences/com.proxy-man.plist",
+    "~/Library/Saved Application State/com.proxy-man.NSProxy.savedState",
+    "~/Library/WebKit/com.proxy-man.NSProxy",
   ]
 end

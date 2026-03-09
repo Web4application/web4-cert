@@ -1,4 +1,4 @@
-AlgorithmType: AsymmetricCipher
+AlgorithmType: AsymmetricCipher 
 Name: RSA/OAEP-MGF1(SHA-1)
 Source: http://www.rsasecurity.com/rsalabs/pkcs/pkcs-1/, PKCS #1 test vectors
 KeyFormat: Component
@@ -1763,3 +1763,4 @@ c1 98 cb b3 8b 7a fc 67 62 6a 9a ef ec 43 22 bf\
 d9 0d 25 63 48 1c 9a 22 1f 78 c8 27 2c 82 d1 b6\
 2a b9 14 e1 c6 9f 6a f6 ef 30 ca 52 60 db 4a 46
 Test: DecryptMatch
+
